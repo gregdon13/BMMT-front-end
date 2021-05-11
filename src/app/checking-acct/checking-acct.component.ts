@@ -37,12 +37,12 @@ export class CheckingAcctComponent implements OnInit{
   }
 
   getCheckingBalance(): void {
-    this.accountService.userSingleAccount(23, 'Checking')
+    this.accountService.userSingleAccount(23, 'CHECKING')
      .subscribe(account => this.accountBalance = account.balance);
   }
 
   getCheckingNumber(): void {
-    this.accountService.userSingleAccount(23, 'Checking')
+    this.accountService.userSingleAccount(23, 'CHECKING')
      .subscribe(account =>
          this.accountNum = account.accountNumber % 1000);
   }
