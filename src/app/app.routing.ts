@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'Create-Profile', component: UserProfileComponent},
   { path: 'transfer', component: TransferComponent },
   { path: 'devPage', component: DevPortalComponent  },
-
+  { path: 'KYC', component: UserProfileComponent},
   // otherwise redirects to home
   { path: '**', redirectTo: ''}
 ];
