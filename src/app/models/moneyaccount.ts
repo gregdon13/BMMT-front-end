@@ -5,7 +5,6 @@ export class MoneyAccount {
   ACCOUNT_NUMBER: number;
   USER_ID: number;
 
-
   get ID(): number {
     return this._ID;
   }

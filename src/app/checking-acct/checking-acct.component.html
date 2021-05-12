@@ -1,10 +1,12 @@
 
+<!--suppress ALL -->
 <h1>CHECKING ACCOUNT</h1>
-<h4>xxx-xxx-{{accountNum}}</h4>
+<!--<h4>xxx-xxx-{{accountNum}}</h4>-->
+<h4>xxx-xxx-{{checkAcct.accountNumber % 1000}}</h4>
 <br>
-<h3>Balance: {{accountBalance | number: '1.2-2'}}</h3>
+<h3>Balance: {{checkAcct.balance | number: '1.2-2'}}</h3>
 <br>
-<h2>{{checkAcct}}</h2>
+<!--<h2>{{checkAcct}}</h2>-->
 <br>
 <div class="transactionTable">
 <table class="table table-bordered table-striped">
@@ -40,9 +42,8 @@
 <div class="navButtons">
   <button routerLink="/help">Help</button>
   <button routerLink="/transfer">Account Actions</button>
+  <button (click)="showInto()">CONSOLE INFO</button>
 </div>
-
-<button (click)="withdraw()">WITHDRAW</button>
 
 
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {BmmtService} from '../bmmt.service';
+
 
 
 @Component({
@@ -9,7 +10,7 @@ import {BmmtService} from '../bmmt.service';
 })
 export class TransferComponent implements OnInit {
   accounts: any[];
-  accountAction: string;
+  @Input() accountAction: string;
   accountFrom: string;
   accountTo: string;
   acctFromNum: number;
@@ -40,7 +41,7 @@ export class TransferComponent implements OnInit {
   }
 
   submitAction(): void {
-    this.accountService.withdrawFunds(this.actAmt, 987654321);
+    this.accountService.withdrawFunds(987654321, this.accounts[1]);
   }
 
 }
