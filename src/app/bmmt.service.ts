@@ -4,6 +4,7 @@ import {UserProfile} from './models/user-profile';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Transaction} from './models/transaction';
+import {Faq} from './models/faq';
 
 @Injectable({
   providedIn: 'root'
@@ -73,4 +74,20 @@ export class BmmtService {
   findByUserName(userName: string): Observable<UserProfile> {
     return this.http.get<UserProfile>(`${this.mainUrl}/user/${userName}`);
   }
+
+  // FAQ methods
+
+  getAllFAQs(): Observable<any> {
+    return this.http.get(`${this.mainUrl}/faq/all`);
+  }
+
+  getFAQById(ID: number): Observable<any> {
+    return this.http.get(`${this.mainUrl}/faq/${ID}`);
+  }
+
+  createFaq(faq: Faq): Observable<Faq>{
+    const body = JSON.stringify(faq);
+    return this.http.post<Faq>(`${this.mainUrl}/faq`, body);
+  }
+
 }
