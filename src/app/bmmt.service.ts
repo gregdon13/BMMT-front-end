@@ -31,6 +31,10 @@ export class BmmtService {
 
   // account methods
 
+  findAccountByUserName(userName: string, accountType: string): Observable<MoneyAccount> {
+    return this.http.get<MoneyAccount>(this.mainUrl + `/account/user/` + userName + `/` + accountType);
+  }
+
   createAccount(moneyAccount: MoneyAccount): Observable<MoneyAccount> {
     const body = JSON.stringify(moneyAccount);
     return this.http.post<MoneyAccount>(`${this.mainUrl}/account`, body);
@@ -62,12 +66,12 @@ export class BmmtService {
     return this.http.get<Iterable<Transaction>>(`${this.mainUrl}/transaction/all`);
   }
 
-  findUserTransactions(userId: number): Observable<Iterable<Transaction>> {
-    return this.http.get<Iterable<Transaction>>(`${this.mainUrl}/transaction/user/${userId}`);
+  findUserTransactions(userId: number): Observable<any> {
+    return this.http.get(`${this.mainUrl}/transaction/user/${userId}`);
   }
 
-  findAccountTransactions(accountNumber: number): Observable<Iterable<Transaction>> {
-    return this.http.get<Iterable<Transaction>>(`${this.mainUrl}/transaction/account/${accountNumber}`);
+  findAccountTransactions(accountNumber: number): Observable<any> {
+    return this.http.get(`${this.mainUrl}/transaction/account/${accountNumber}`);
   }
 
   createNewTransaction(transaction: Transaction): Observable<Transaction> {
