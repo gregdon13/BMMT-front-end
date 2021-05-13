@@ -67,4 +67,10 @@ export class BmmtService {
     const body = JSON.stringify(transaction);
     return this.http.post<Transaction>(`${this.mainUrl}/transaction`, body);
   }
+
+  // user methods
+
+  findByUserName(userName: string): Observable<UserProfile> {
+    return this.http.get<UserProfile>(`${this.mainUrl}/user/${userName}`);
+  }
 }
