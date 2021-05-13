@@ -11,7 +11,6 @@ import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { InvestmentAccountComponent } from './investment-account/investment-account.component';
 import { LoginComponent } from './login/login.component';
-import { ModelsComponent } from './models/models.component';
 import { SavingsAccountComponent } from './savings-account/savings-account.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -25,7 +24,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     HomeComponent,
     InvestmentAccountComponent,
     LoginComponent,
-    ModelsComponent,
     SavingsAccountComponent,
     TransferComponent,
     UserProfileComponent
