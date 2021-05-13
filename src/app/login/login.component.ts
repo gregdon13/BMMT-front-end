@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.allService.findByUserName(this.username)
-      .subscribe(data => {console.log('test', data); this.allService.setUser(data.id); }, error => {});
+       .subscribe(data => {console.log('test', data); this.allService.setUser(data.id); }, error => {});
   }
 
 }
